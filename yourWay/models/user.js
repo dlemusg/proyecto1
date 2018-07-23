@@ -15,7 +15,15 @@ var UserSchema = mongoose.Schema({
 	},
 	name: {
 		type: String
+	},
+	date: {
+        type: Date,
+        required: true,
+        default: Date.now
 	}
+},{	
+	
+	 collection: "users" 
 });
 
 var User = module.exports = mongoose.model('User', UserSchema);

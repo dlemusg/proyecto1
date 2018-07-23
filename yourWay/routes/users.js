@@ -6,17 +6,17 @@ var LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user');
 
 // Register
-router.get('/register',  function(req, res){
+router.get('/register', function (req, res) {
 	res.render('register');
 });
 
 // login
-router.get('/login', function(req, res){
+router.get('/login', function (req, res) {
 	res.render('login');
-
 });
 
-	// Register User
+
+// Register User
 router.post('/register', function (req, res) {
 	var name = req.body.name;
 	var email = req.body.email;
@@ -36,32 +36,27 @@ router.post('/register', function (req, res) {
 
 	var errors = req.validationErrors();
 
-	if(errors){
+	if (errors) {
 		res.render('register', {
-			errors:errors
+			errors: errors
 		});
+
 	} else {
 		//console.log('PASSED')
 		var newUser = new User({
-
 			name: name,
 			email: email,
 			username: username,
 			password: password
 		});
 
-		User.createUser(newUser, function(err, user){
-			if(err) throw err;
+		User.createUser(newUser, function (err, user) {
+			if (err) throw err;
 			console.log(user);
 		});
-
 		req.flash('success_msg', 'You are registered and can now login');
-
 		res.redirect('/users/login');
-
 	}
-	
-
 });
 
 passport.use(new LocalStrategy(
@@ -81,17 +76,18 @@ passport.use(new LocalStrategy(
 				}
 			});
 		});
-	}));
+	})
+);
 
-	passport.serializeUser(function (user, done) {
-		done(null, user.id);
+passport.serializeUser(function (user, done) {
+	done(null, user.id);
+});
+
+passport.deserializeUser(function (id, done) {
+	User.getUserById(id, function (err, user) {
+		done(err, user);
 	});
-	
-	passport.deserializeUser(function (id, done) {
-		User.getUserById(id, function (err, user) {
-			done(err, user);
-		});
-	});
+});
 
 router.post('/login',
 	passport.authenticate('local', { successRedirect: '/', failureRedirect: '/users/login', failureFlash: true }),
@@ -99,13 +95,51 @@ router.post('/login',
 		res.redirect('/');
 	});
 
-	router.get('/logout', function (req, res) {
-		req.logout();
-	
-		req.flash('success_msg', 'You are logged out');
-	
-		res.redirect('/users/login');
+router.get('/logout', function (req, res) {
+	req.logout();
+	req.flash('success_msg', 'You are logged out');
+	res.redirect('/users/login');
+});
+
+
+
+
+
+
+// login
+router.get('/location', function (req, res) {
+	res.render('location');
+});
+
+router.get('/location', function (req, res) {
+	res.render('location');
+	res.redirect('/users/location');
+});
+
+
+
+
+var UserLocation = require('../models/location');
+
+
+router.post('/location', function (req, res) {
+	var username = req.body.username;
+	var latitude = req.body.latitude;
+	var longitude = req.body.longitude;
+
+	console.log(latitude);
+
+	var newUserLocation = new UserLocation({
+		username: username,
+		latitude: latitude,
+		longitude: longitude,
 	});
+
+	UserLocation.addLocation(newUserLocation, function (err, location) {
+		if (err) throw err;
+		console.log(location);
+	});
+});
 
 
 
