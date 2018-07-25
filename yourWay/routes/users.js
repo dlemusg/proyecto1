@@ -4,6 +4,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
+var x;
 
 // Register
 router.get('/register', function (req, res) {
@@ -61,6 +62,7 @@ router.post('/register', function (req, res) {
 
 passport.use(new LocalStrategy(
 	function (username, password, done) {
+		x=username;
 		User.getUserByUsername(username, function (err, user) {
 			if (err) throw err;
 			if (!user) {
@@ -112,6 +114,7 @@ router.get('/location', function (req, res) {
 });
 
 router.get('/location', function (req, res) {
+	console.log('ensayo');
 	res.render('location');
 	res.redirect('/users/location');
 });
@@ -123,11 +126,11 @@ var UserLocation = require('../models/location');
 
 
 router.post('/location', function (req, res) {
-	var username = req.body.username;
+	var username = req.user.username;
 	var latitude = req.body.latitude;
 	var longitude = req.body.longitude;
 
-	console.log(latitude);
+	console.log(req.user.username);
 
 	var newUserLocation = new UserLocation({
 		username: username,

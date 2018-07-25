@@ -1,76 +1,32 @@
 <!DOCTYPE html>
 <html>
 
+  
+
 <h2 class="page-header">Agregar Ubicación, {{ user.username }}</h2>
 
-
 <body>
+    
 
- 
-
-<script src="/routes/location.js" type="text/javascript" charset="utf-8"></script>
-
-
-    <form method="post" action="/users/location" id="fm">
-
-        <div class="form-group">
-            <label>Usuario</label>
-            <input type="text" class="form-control" name="username" placeholder="Username" id="username">
-        </div>
-
-        <div class="form-group">
-            <label>Latitud</label>
-            <input  id="latitude" type="text" class="form-control" name="latitude" placeholder="latitude" >
-        </div>
-
-        <div class="form-group">
-            <label>Longitud</label>
-            <input type="text" class="form-control" name="longitude" placeholder="longitude" id="longitude">
-        </div>
-
-             <button type="submit" class="btn btn-default" id=enviar>Submit</button>
+    <form method="post" action="/users/location" id="form" name='form' onsubmit="setTimeout('document.forms[0].reset()', 2000)">
+        <input id="latitude" type="hidden" class="form-control" name="latitude" placeholder="latitude">
+        <input type="hidden" class="form-control" name="longitude" placeholder="longitude" id="longitude">
     </form>
 
-
-    <button href="javascript:getmap()"  id="get" onclick="getLocation()" >Try It</button>
+    <button href="javascript:getmap()" id="get" onclick="getLocation()">Try It</button>
 
     <p id="demo">fsdf</p>
-    <input id="aaa">
+
+    <button id="iniciar" onclick="iniciar()">Iniciar</button>
+    <button id="iniciar" onclick="parar()">parar</button>
 
 </body>
 
 
 
+
 <script>
-
-    function getLocation() { 
-    console.log("gola")
-
-    if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(showPosition);
-
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
     
-    var x = document.getElementById("demo");
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
-
-        var a1 = document.getElementById("latitude");
-        a1.value = position.coords.latitude; 
-
-        var a2 = document.getElementById("longitude");
-        a2.value = position.coords.longitude; 
-
-        var a3 = document.getElementById("username");
-        //a3.value = username;
-
-}
-
 </script>
 
 </html>
