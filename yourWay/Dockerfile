@@ -13,4 +13,4 @@ COPY . ./
 RUN npm install --test
 
 EXPOSE 3000
-CMD node start
+CMD node app.js
