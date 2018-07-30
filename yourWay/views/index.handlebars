@@ -1,2 +1,67 @@
- <h2 class="page-header">INICIO</h2>
-<p>Welcome to your dashboard, {{user.name}}!</p>  
+<body>
+
+
+    <main role="main" class="container"></main>
+    <div class="starter-template">
+
+        <h1 class="page-header">INICIO</h1>
+        <p class="lead">Bienvenido!, {{user.name}}!</p>
+        <p class="lead">Selecciona lo que quieres hacer!</p>
+
+
+
+    </div>
+    </main>
+
+    <script src='/public/js/location.js'></script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLSFk8loDLMqzNpI-YIYMwmsI0syMaiyg&callback=initMap"></script>
+
+    <h3>Get Data</h3>
+    <a href="/index">LOAD DATA</a>
+    <div>
+        <!--
+    <a href="javascript:getmap()" > Mapa </a>
+    {{# each items }}
+    <article class="item">
+        <div>Username: {{ this.username }}</div>
+        <div>Latitude: {{ this.latitude }}</div>
+        <div>Logitude: {{ this.longitude }}</div>
+
+    </article>
+   addMarker({{ this.latitude }}, {{ this.longitude }});
+   {{/each}}
+-->
+
+    </div>
+
+    <div id="map"></div>
+    <style type="text/css">
+        #map {
+            height: 500px;
+        }
+    </style>
+</body>
+
+
+<script>
+    //  var location = items.;
+
+    function addMarker(a, b) {
+        var coor = new google.maps.latLng(a, b)
+        var marker = new google.maps.Marker({
+            position: coor,
+            map: map
+            //icon:props.iconImage
+        })
+        marker.setMap(map)
+    }
+
+    function initMap() {
+        var options = {
+            zoom: 8,
+            center: new google.maps.LatLng(6.27053, -75.57211999999998)
+        }
+        var map = new google.maps.Map(document.getElementById('map'), options);
+    }
+</script>

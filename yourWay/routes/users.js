@@ -3,10 +3,13 @@ var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-var scripts = [{ script: '/public/js/location.js' }];
+//var scripts = [{ script: '/public/js/location.js' }];
 
 var User = require('../models/user');
-var x;
+
+var Location = require('../models/location');
+
+
 
 // Register
 router.get('/register', function (req, res) {
@@ -132,7 +135,7 @@ router.post('/location', function (req, res) {
 	var latitude = req.body.latitude;
 	var longitude = req.body.longitude;
 
-	console.log(req.user.username);
+	//	console.log(req.user.username);
 
 	var newUserLocation = new UserLocation({
 		username: username,
