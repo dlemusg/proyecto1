@@ -19,19 +19,19 @@
 
     <h3>Get Data</h3>
     <a href="/index">LOAD DATA</a>
-    <div>
-        <!--
-    <a href="javascript:getmap()" > Mapa </a>
-    {{# each items }}
-    <article class="item">
-        <div>Username: {{ this.username }}</div>
-        <div>Latitude: {{ this.latitude }}</div>
-        <div>Logitude: {{ this.longitude }}</div>
+    <div class="container-fluid">
 
-    </article>
-   addMarker({{ this.latitude }}, {{ this.longitude }});
-   {{/each}}
--->
+             <!--<a href="javascript:getmap()" > Mapa </a>-->
+        {{# each items }}
+        <article class="item">
+            <div>Username: {{ this.username }}</div>
+            <div>Latitude: {{ this.latitude }}</div>
+            <div>Logitude: {{ this.longitude }}</div>
+
+        </article>
+        <!--addMarker({{ this.latitude }}, {{ this.longitude }});-->
+        {{/each}}
+
 
     </div>
 
