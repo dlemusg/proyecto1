@@ -25,6 +25,37 @@ Aplicacion en node js de geolocalizacion, la cual permite guardar la ubicacion c
  # 3 Diseño
  ## 3.1 Modelo de datos
  User:
- 
+
+ {UserSchema: {username: String, password: String, email: String, name: String, date: Date }}
  
  Location:
+
+{LocationSchema:{username: String, latitude: Number, longitude: Number, date: Date}}
+
+## 3.2 Servicios web
+
+1. http://server/users/register
+
+Método: POST
+
+Descripción:  Crear Cuenta de usuario.
+
+Datos de entrada:
+
+  user, password, username, email, date
+
+2. http://server/users/login
+
+Método: GET
+
+Descripción:  Auntentificación de usarios.
+
+3. http://server/users/location
+
+Método: POST
+
+Descripción:  Obterner y guardar ubicación
+
+Datos de entrada:
+
+  username, latitud, longitud, date
