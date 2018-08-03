@@ -109,10 +109,6 @@ router.get('/logout', function (req, res) {
 });
 
 
-
-
-
-
 // login
 router.get('/location', function (req, res) {
 	res.render('location');

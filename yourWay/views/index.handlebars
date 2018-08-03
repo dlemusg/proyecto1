@@ -2,14 +2,16 @@
 
 
     <main role="main" class="container"></main>
+ 
     <div class="starter-template">
+ <center>
+            <h1 class="page-header">INICIO</h1>
+            <p class="lead">Bienvenido!, {{user.name}}!</p>
+            <p class="lead">Selecciona lo que quieres hacer!</p>
 
-        <h1 class="page-header">INICIO</h1>
-        <p class="lead">Bienvenido!, {{user.name}}!</p>
-        <p class="lead">Selecciona lo que quieres hacer!</p>
-
-
-
+            <button type="submit" class="btn btn-default" onclick="location='/users/location'" />Iniciar Recorrido</button>
+            <button type="submit" class="btn btn-default" onclick="/index">Mostrar posiciones</button>
+   </center>
     </div>
     </main>
 
@@ -17,11 +19,10 @@
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLSFk8loDLMqzNpI-YIYMwmsI0syMaiyg&callback=initMap"></script>
 
-    <h3>Get Data</h3>
     <a href="/index">LOAD DATA</a>
     <div class="container-fluid">
 
-     
+
         <!--<a href="javascript:getmap()" > Mapa </a>-->
         {{# each items }}
         <article class="item">
