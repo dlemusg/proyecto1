@@ -2,16 +2,20 @@
 
 
     <main role="main" class="container"></main>
- 
+
     <div class="starter-template">
- <center>
+        <center>
             <h1 class="page-header">INICIO</h1>
             <p class="lead">Bienvenido!, {{user.name}}!</p>
             <p class="lead">Selecciona lo que quieres hacer!</p>
 
             <button type="submit" class="btn btn-default" onclick="location='/users/location'" />Iniciar Recorrido</button>
-            <button type="submit" class="btn btn-default" onclick="/index">Mostrar posiciones</button>
-   </center>
+            <p style="visibility: hidden" id="demo"></p>
+            <form name="myform" action="/index" method="GET">
+                <input type="submit" class="btn btn-default" value="Mostrar posiciones">
+
+            </form>
+        </center>
     </div>
     </main>
 
@@ -26,9 +30,9 @@
         <!--<a href="javascript:getmap()" > Mapa </a>-->
         {{# each items }}
         <article class="item">
-            <div>Username: {{ this.username }}</div>
-            <div>Latitude: {{ this.latitude }}</div>
-            <div>Logitude: {{ this.longitude }}</div>
+            <div>Username: {{ this.username }},
+            Latitude: {{ this.latitude }},
+           Logitude: {{ this.longitude }}</div>
 
         </article>
         <!--addMarker({{ this.latitude }}, {{ this.longitude }});-->
@@ -36,13 +40,14 @@
 
 
     </div>
-
+    <!--
     <div id="map"></div>
     <style type="text/css">
         #map {
             height: 500px;
         }
     </style>
+    -->
 </body>
 
 

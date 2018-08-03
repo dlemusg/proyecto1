@@ -12,16 +12,14 @@
         <input type="hidden" class="form-control" name="longitude" placeholder="longitude" id="longitude">
     </form>
 
-    <button href="javascript:getmap()" id="get" onclick="getLocation()">Try It</button>
-    <div>
-        <p  style="visibility: hidden" id="demo">Ubicación</p>
-    </div>
+    <!--<button href="javascript:getmap()" id="get" onclick="getLocation()">Try It</button>-->
+    
 
 
-    <button type="submit" class="btn btn-default"  id="iniciar" onclick="iniciar()">Iniciar</button>
+    <button href="javascript:getmap()" type="submit" class="btn btn-default"  id="iniciar" onclick="iniciar()">Iniciar</button>
     <button type="submit" class="btn btn-default"  id="parar" onclick="parar()">Parar</button>
 
-
+<h4>Mira tu trayecto:</h4>
 
     <div id="map"></div>
     <style type="text/css">
@@ -29,7 +27,14 @@
             height: 500px;
         }
     </style>
+
+
+    <div>
+        <p  style="visibility: hidden" id="demo">Ubicación</p>
+    </div>
     </center>
+
+
 </body>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLSFk8loDLMqzNpI-YIYMwmsI0syMaiyg
@@ -66,8 +71,8 @@
         //clearInterval(ciclo);
         
         //location.reload();
-        document.getElementById("iniciar").disabled = false;
-        document.getElementById("parar").disabled = true;
+        //document.getElementById("iniciar").disabled = false;
+        //document.getElementById("parar").disabled = true;
     }
     var lat, lon;
     function guardar() {
