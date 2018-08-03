@@ -34,28 +34,36 @@ Aplicacion en node js de geolocalizacion, la cual permite guardar la ubicacion c
 
 ## 3.2 Servicios web
 
-1. http://server/users/register
+  1. http://server/users/register
 
-Método: POST
+    Método: POST
 
-Descripción:  Crear Cuenta de usuario.
+    Descripción:  Crear Cuenta de usuario.
 
-Datos de entrada:
+    Datos de entrada:
 
-  user, password, username, email, date
+    user, password, username, email, date
 
-2. http://server/users/login
+  2. http://server/users/login
 
-Método: GET
+    Método: GET
 
-Descripción:  Auntentificación de usarios.
+    Descripción:  Auntentificación de usarios.
 
-3. http://server/users/location
+  3. http://server/users/location
 
-Método: POST
+    Método: POST
 
-Descripción:  Obterner y guardar ubicación
+    Descripción:  Obterner y guardar ubicación
 
-Datos de entrada:
+    Datos de entrada:
 
-  username, latitud, longitud, date
+    username, latitud, longitud, date
+
+  4. http://localhost:3000/index
+
+    Método: GET
+
+    Descripción:  Obterner ubicaciones de usuario
+
+   

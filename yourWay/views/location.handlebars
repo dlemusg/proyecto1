@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
-<h2 class="page-header">Agregar Ubicación, {{ user.username }}</h2>
+<center>
+<h2 class="page-header">{{ user.username }}, Inicia tu recorrido!</h2>
 
 <body>
     <script type="text/javascript" src="/public/js/location.js"></script>
@@ -14,12 +14,12 @@
 
     <button href="javascript:getmap()" id="get" onclick="getLocation()">Try It</button>
     <div>
-        <p id="demo">Ubicación</p>
+        <p  style="visibility: hidden" id="demo">Ubicación</p>
     </div>
 
 
-    <button id="iniciar" onclick="iniciar()">Iniciar</button>
-    <button id="parar" onclick="parar()">parar</button>
+    <button type="submit" class="btn btn-default"  id="iniciar" onclick="iniciar()">Iniciar</button>
+    <button type="submit" class="btn btn-default"  id="parar" onclick="parar()">Parar</button>
 
 
 
@@ -29,6 +29,7 @@
             height: 500px;
         }
     </style>
+    </center>
 </body>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLSFk8loDLMqzNpI-YIYMwmsI0syMaiyg
@@ -60,7 +61,10 @@
         document.getElementById("parar").disabled = false;
     }
     function parar() {
-        clearInterval(ciclo);
+        window.stop()
+        //guardar.break();
+        //clearInterval(ciclo);
+        
         //location.reload();
         document.getElementById("iniciar").disabled = false;
         document.getElementById("parar").disabled = true;
