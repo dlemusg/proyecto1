@@ -1,17 +1,22 @@
 # PROYECTO 2 - Documento 1<h1>
 
-__Equipo:__
 
-Marco antonio Franco Montoya
-Juan Camilo Rodriguez Montoya
-David Felipe Lemus Giraldo 
+### Definición del equipo, proyecto y aplicación:
+__Miembros del equipo y asignación de QA por miembros__
 
-__Repositorio Seleccionado:__
+* Marco antonio Franco Montoya - Disponibilidad
+* Juan Camilo Rodriguez Montoya - Rendimiento
+* David Felipe Lemus Giraldo - Seguridad
 
-https://github.com/dlemusg/proyecto1
+__Selección de la aplicación basada en Proyecto1__
 
-Al analizar los 3 proyectos, encontramos mayor facilidad trabajando con el  de David Lemus, considerando la facilidad de entender el proyecto y mayor cantidad de avances comparado con los otros.
-Las plataformas utilizadas no fueron preocupación, puesto que todos trabajamos usando node.js, docker, mongodb.
+Al analizar los 3 proyectos, encontramos mayor facilidad trabajando con el  de David Lemus, considerando la facilidad de entender el proyecto y mayor cantidad de avances comparado con los otros. Las plataformas utilizadas no fueron preocupación, puesto que todos trabajamos usando node.js, docker, mongodb.
+
+*El repositorio seleccionado fue:* https://github.com/dlemusg/proyecto1
+
+__Descripción de la aplicación__
+
+falta
 
 __Requisitos Funcionales de la aplicación:__
 
@@ -20,11 +25,4 @@ __Requisitos Funcionales de la aplicación:__
 * Visualización de ruta previamente almacenada.
 * Visualización de ruta en tiempo real
 
-__Asignación de QA’s:__
-
-Marco Franco: Disponibilidad
-Camilo Rodriguez: Rendimiento
-David Lemus: Seguridad
-
-__Repo proyecto2:__
-https://github.com/dlemusg/proyecto1
+### Detalles técnicos del diseño e implementación funcional para el proyecto2.
