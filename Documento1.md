@@ -30,6 +30,6 @@ __Requisitos Funcionales de la aplicación:__
 
 ### Marco-referencia-v1
 
-##### Disponibilidad
+#### Disponibilidad
 #### Rendimiento
 #### Seguridad
