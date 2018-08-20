@@ -26,3 +26,10 @@ __Requisitos Funcionales de la aplicación:__
 * Visualización de ruta en tiempo real
 
 ### Detalles técnicos del diseño e implementación funcional para el proyecto2.
+
+
+### Marco-referencia-v1
+
+##### Disponibilidad
+#### Rendimiento
+#### Seguridad
