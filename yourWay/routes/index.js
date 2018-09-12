@@ -24,15 +24,15 @@ function ensureAuthenticated(req, res, next){
 var objectId = require('mongodb').ObjectID;
 var assert = require('assert');
 var mongo = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017/';
-//var url = 'mongodb://mongo-server/';   
+//var url = 'mongodb://localhost:27017/';
+var url = 'mongodb://mongo-server/';   
 module.exports = router;
 var resultArray = [];
 router.get('/index', function(req, res, next) {
 
 	mongo.connect(url, function(err, db) {
 		assert.equal(null, err);
-		var dbo = db.db('yourWay')
+		var dbo = db.db('yourWay3')
 	  var cursor = dbo.collection('location').find({"username": req.user.username});
 		
 		cursor.forEach(function(doc, err) {
